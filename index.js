@@ -1,25 +1,25 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Triangle = require("./lib/shapes");
-const generateHTML = (shape, characters, text) =>
-    `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-  <title>Document</title>
-</head>
-<body>
-<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg"><g>
+const {Square, Triangle, Circle} = require("./lib/shapes");
+const generateSVG = (shape, characters, text) =>
+    //     `<!DOCTYPE html>
+    // <html lang="en">
+    // <head>
+    //   <meta charset="UTF-8">
+    //   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    //   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    //   <title>Document</title>
+    // </head>
+    // <body>
+    `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><g>
 ${shape}
 <text x="100" y="150" fill="${text}" font-size="35">
 ${characters} 
 </text>
 </g>
-</svg>
-</body>
-</html>`;
+</svg>`;
+// </body>
+// </html>`
 
 inquirer
     //have to call the function on inquirer. Need to define it as an object here
@@ -49,16 +49,35 @@ inquirer
         },
     ])
     .then((answers) => {
-        // const htmlPageContent = generateHTML(answers);
-        const shape = new Triangle();
-        shape.setColor(answers.color)
-        const htmlPageContent = generateHTML(shape.render(),answers.characters,answers.text)
+        if (answers.shape === 'triangle') {
+            const shape = new Triangle();
+            shape.setColor(answers.color)
+            const SVGPageContent = generateSVG(shape.render(), answers.characters, answers.text)
 
+            fs.writeFile('logo.svg', SVGPageContent, (err) =>
+                err ? console.log(err) : console.log('Generated logo.svg!')
+            );
+        }
+        if (answers.shape === 'circle') {
+            const shape = new Circle();
+            shape.setColor(answers.color)
+            const SVGPageContent = generateSVG(shape.render(), answers.characters, answers.text)
 
-        fs.writeFile('index.html', htmlPageContent, (err) =>
-            err ? console.log(err) : console.log('Successfully created index.html!')
-        );
+            fs.writeFile('logo.svg', SVGPageContent, (err) =>
+                err ? console.log(err) : console.log('Generated logo.svg!')
+            );
+        }
+        if (answers.shape === 'square') {
+            const shape = new Square();
+            shape.setColor(answers.color)
+            const SVGPageContent = generateSVG(shape.render(), answers.characters, answers.text)
+
+            fs.writeFile('logo.svg', SVGPageContent, (err) =>
+                err ? console.log(err) : console.log('Generated logo.svg!')
+            );
+        }
     });
+
 
 
 

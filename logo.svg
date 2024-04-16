@@ -1,0 +1,7 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><g>
+<circle r="45" cx="50" cy="50" fill="blue" />
+<text x="100" y="150" fill="red" font-size="35">
+USB 
+</text>
+</g>
+</svg>
