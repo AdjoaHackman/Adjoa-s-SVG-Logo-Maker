@@ -13,7 +13,7 @@ const generateSVG = (shape, characters, text) =>
     // <body>
     `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><g>
 ${shape}
-<text x="100" y="150" fill="${text}" font-size="35">
+<text x="90" y="110" fill="${text}" font-size="35">
 ${characters} 
 </text>
 </g>
