@@ -1,13 +1,13 @@
 # SVG-Logo-Maker
 
 # Live Screen Recording
-[Screen Recording]()
+[Screen Recording](https://app.screencastify.com/v3/watch/2UeJA4uDmjPrAQFyz5jZ)
 
 # Description
 This assignment allows for users to generate a SVG logo file via prompts that ask users to select a shape, and color for the shape and text from the command-line using Node.js and Inquirer. This assignment also requires that we test the functionality of the application with unit tests via Jest. 
 
 # SVG Sample
-
+<img src="./examples/Screenshot 2024-04-22 at 8.53.05 PM.png">
 
 # Table of Contents
 - [Installation](#installation)
@@ -16,7 +16,11 @@ This assignment allows for users to generate a SVG logo file via prompts that as
 - [Testing](#testing)
 - [Questions](#questions)
 
+
 # Installation
+1. Open the terminal in VS Code and <code>npm install</code>. 
+2. Run the application, type <code>node index.js</code>.
+
 
 # Usage
 The purpose of this code is to generate a SVG logo file via prompts in the command line. 

@@ -1,6 +1,6 @@
 <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><g>
 <rect width="200" height="200" x="20" y="10" fill="blue" />
-<text x="90" y="110" fill="red" font-size="35">
+<text x="90" y="110" fill="yellow" font-size="35">
 CAT 
 </text>
 </g>
